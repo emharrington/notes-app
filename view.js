@@ -1,5 +1,3 @@
-const NotesModel = require('./model');
-
 class NotesView {
     constructor(model) {
         this.model = model;
@@ -17,6 +15,10 @@ class NotesView {
     }
 
     displayNotes() {
+        document.querySelectorAll('.note').forEach(element => {
+            element.remove();
+        })
+
         const notes = this.model.getNotes();
 
         notes.forEach(note => {
